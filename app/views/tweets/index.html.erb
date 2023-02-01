@@ -1,0 +1,12 @@
+<h1>Tweets</h1>
+
+<% @tweets.each do |tweet| %>
+  <div class="tweet">
+    <p><%= tweet.text %></p>
+    <% if tweet.media_url.present? %>
+      <%= image_tag tweet.media_url %>
+    <% end %>
+    <%= link_to "Edit", edit_tweet_path(tweet) %> |
+    <%= link_to "Delete", tweet_path(tweet), method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+<% end %>

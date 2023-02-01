@@ -1,0 +1,11 @@
+<%= form_tag retrieve_tweets_path, method: :get do %>
+  <%= submit_tag "Retrieve Tweets" %>
+<% end %>
+
+<h1>Tweets</h1>
+
+<% @tweets.each do |tweet| %>
+
+    <p><%= tweet.as_json %></p>
+
+<% end %>
